@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1092,1212</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>933,1231</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SecectTheMovie_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -72,14 +72,14 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SelectTheMovie" sap:VirtualizedContainerService.HintSize="768,1147" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SelectTheMovie" sap:VirtualizedContainerService.HintSize="768,1166" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="726,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This sequence selects the movie, then the movie format, and then the movie time" />
-    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Search the movie title" sap:VirtualizedContainerService.HintSize="726,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_movieTitile+ &quot;[k(enter)]&quot;]">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="726,75" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This sequence selects the movie, then the movie format, and then the movie time" />
+    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Search the movie title" sap:VirtualizedContainerService.HintSize="726,135" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_movieTitile+ &quot;[k(enter)]&quot;]">
       <ui:TypeInto.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bd10ff76-5665-42f1-8312-33cb4c38d1a6" InformativeScreenshot="b03940254c6c7c1b48f8cbaa9de53967" Selector="[String.Format(&quot;&lt;html app='chrome.exe' htmlwindowname='{0}' title='*' /&gt;&lt;webctrl name='query' tag='INPUT' type='text' /&gt;&quot;, in_cinemaName)]">
           <ui:Target.TimeoutMS>
@@ -91,7 +91,7 @@
         </ui:Target>
       </ui:TypeInto.Target>
     </ui:TypeInto>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click the movie container" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click the movie container" sap:VirtualizedContainerService.HintSize="726,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -113,7 +113,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Scroll down" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Scroll down" sap:VirtualizedContainerService.HintSize="726,107" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -135,8 +135,8 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="726,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selecting &quot; + in_movieTitile + &quot; &quot; + in_movieFormat + &quot; &quot; + in_movieDay + &quot; &quot; + in_movieTime + &quot; ...&quot;]" />
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Selected Day" sap:VirtualizedContainerService.HintSize="726,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="726,102" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selecting &quot; + in_movieTitile + &quot; &quot; + in_movieFormat + &quot; &quot; + in_movieDay + &quot; &quot; + in_movieTime + &quot; ...&quot;]" />
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Selected Day" sap:VirtualizedContainerService.HintSize="726,107" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -158,13 +158,13 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Select the input format and hour" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
+    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Select the input format and hour" sap:VirtualizedContainerService.HintSize="726,200" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
       <ui:AnchorBase.Action>
         <ActivityAction x:TypeArguments="ui:Anchor">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
           </ActivityAction.Argument>
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Selected Day" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click on Selected Day" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -189,9 +189,9 @@
         </ActivityAction>
       </ui:AnchorBase.Action>
       <ui:AnchorBase.AnchorProvider>
-        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'SysListView32'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'SysListView32'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
           <ui:WaitUiElementAppear.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ebb47f5f-a8dc-4095-9b7b-a361082e940e" InformativeScreenshot="6fda45767148094dabb390f9e12927ee" Selector="&lt;html app='chrome.exe' htmlwindowname='Bucuresti Park Lake' title='Omul-Păianjen: Niciun drum spre casă | Rezervă/cumpără bilete la Cinema City' /&gt;&lt;webctrl aaname='3D' tag='SPAN' /&gt;">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ebb47f5f-a8dc-4095-9b7b-a361082e940e" InformativeScreenshot="6fda45767148094dabb390f9e12927ee" Selector="[String.Format(&quot;&lt;html app='chrome.exe' htmlwindowname='{0}' title='*' /&gt;&lt;webctrl aaname='{1}' tag='SPAN' /&gt;&quot;, in_cinemaName, in_movieFormat)]">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>
