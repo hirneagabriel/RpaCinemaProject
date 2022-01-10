@@ -1,18 +1,18 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SecectTheMovie" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_movieTitile" Type="InArgument(x:String)" />
-    <x:Property Name="in_movieFormat" Type="InArgument(x:String)" />
-    <x:Property Name="in_movieTime" Type="InArgument(x:String)" />
+    <x:Property Name="in_movieFormat" Type="InOutArgument(x:String)" />
+    <x:Property Name="in_movieTime" Type="InOutArgument(x:String)" />
     <x:Property Name="in_movieDay" Type="InArgument(x:String)" />
     <x:Property Name="in_cinemaName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>933,1231</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>933,1421</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SecectTheMovie_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="27">
+    <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -40,10 +40,11 @@
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -70,9 +71,10 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SelectTheMovie" sap:VirtualizedContainerService.HintSize="768,1166" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SelectTheMovie" sap:VirtualizedContainerService.HintSize="768,1356" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -158,6 +160,18 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Select movie format and time" DisplayName="Invoke proba workflow" sap:VirtualizedContainerService.HintSize="726,150" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SelectFormatAndTime.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_cinemaName">[in_cinemaName]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_movieFormat">[in_movieFormat]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_movieTime">[in_movieTime]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
     <ui:AnchorBase AnchorPosition="Auto" DisplayName="Select the input format and hour" sap:VirtualizedContainerService.HintSize="726,200" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
       <ui:AnchorBase.Action>
         <ActivityAction x:TypeArguments="ui:Anchor">
@@ -176,7 +190,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1556e96-8d7e-4fc6-adbc-7da267d93592" InformativeScreenshot="46a24aa03efd787d8c0c08bdf1d0b824" Selector="&lt;webctrl aaname='{{in_movieTime}}' tag='A' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1556e96-8d7e-4fc6-adbc-7da267d93592" InformativeScreenshot="46a24aa03efd787d8c0c08bdf1d0b824" Selector="&lt;webctrl aaname=' {{in_movieTime}} ' tag='A' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
