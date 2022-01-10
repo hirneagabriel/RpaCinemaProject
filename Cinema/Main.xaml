@@ -60,26 +60,19 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="376,1505" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://www.cinemacity.ro" Name="CinemaCityURL" />
       <Variable x:TypeArguments="x:String" Name="movieDay" />
-      <Variable x:TypeArguments="x:String" Name="movieTitle">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">355</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="movieFormat">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">2D</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="355" Name="movieTitle" />
+      <Variable x:TypeArguments="x:String" Default="2D" Name="movieFormat" />
       <Variable x:TypeArguments="x:Int32" Default="2" Name="numberOfTickets" />
       <Variable x:TypeArguments="x:String" Name="movieTime">
         <Variable.Default>
-          <Literal x:TypeArguments="x:String" xml:space="preserve"> 21:40 </Literal>
+          <Literal x:TypeArguments="x:String">21:40</Literal>
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="cinemaName" />
@@ -109,13 +102,30 @@
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="MovieDataTable">[DTMovies]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteMoviesIntoExcel workflow" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="WriteMoviesIntoExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_MovieDataTable">[DTMovies]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFile">[excelMovieFile]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_SelectedMovie">[movieTitle]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Search the chosen movie title and select the chosen hour" DisplayName="SelectTheMovie" sap:VirtualizedContainerService.HintSize="334,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SelectTheMovie.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_movieTitile">[movieTitle]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_movieFormat">[movieFormat]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_movieTime">[movieTime]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_movieDay">[movieDay]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_cinemaName">[cinemaName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_movieTitile">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="movieTitle" />
+        </InArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="in_movieFormat">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="movieFormat" />
+        </InOutArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="in_movieTime">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="movieTime" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_movieDay">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="movieDay" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_cinemaName">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="cinemaName" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -155,13 +165,6 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke WriteMoviesIntoExcel workflow" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="WriteMoviesIntoExcel.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_MovieDataTable">[DTMovies]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ExcelFile">[excelMovieFile]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_SelectedMovie">[movieTitle]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
