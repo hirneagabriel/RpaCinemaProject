@@ -231,7 +231,7 @@
       </Assign.Value>
     </Assign>
     <p:SplitString DisplayName="Get a list of movie formats" sap:VirtualizedContainerService.HintSize="813,143" sap2010:WorkflowViewState.IdRef="SplitString_3" Input="[formatStr]" Result="[formatList]" Separator=" " StringSplitOptions="None" />
-    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Movie Format" sap:VirtualizedContainerService.HintSize="813,317" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label=" " Options="[formatList]" Title=" ">
+    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Movie Format" sap:VirtualizedContainerService.HintSize="813,317" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Select format" Options="[formatList]" Title="Select format">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_movieFormat]</OutArgument>
       </ui:InputDialog.Result>
