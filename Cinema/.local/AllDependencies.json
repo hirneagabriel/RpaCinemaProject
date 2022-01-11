@@ -7610,15 +7610,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Stefan\\.nuget\\packages\\": {}
+    "C:\\Users\\hirne\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "RezervareBileteCinema",
       "projectName": "RezervareBileteCinema",
-      "projectPath": "C:\\Users\\Stefan\\Documents\\GitHub\\RpaCinemaProject\\Cinema\\.local",
-      "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stefan\\Documents\\GitHub\\RpaCinemaProject\\Cinema\\.local"
+      "projectPath": "C:\\Users\\hirne\\Documents\\GitHub\\RpaCinemaProject\\Cinema\\.local",
+      "packagesPath": "C:\\Users\\hirne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hirne\\Documents\\GitHub\\RpaCinemaProject\\Cinema\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7649,7 +7649,7 @@
             "version": "[21.10.4, 21.10.4]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Stefan\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\hirne\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

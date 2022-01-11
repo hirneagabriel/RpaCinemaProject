@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>933,3241</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1092,3095</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>proba_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -79,10 +79,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>Microsoft.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="proba" sap:VirtualizedContainerService.HintSize="768,3176" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="proba" sap:VirtualizedContainerService.HintSize="768,3030" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="data" />
       <Variable x:TypeArguments="x:String" Name="text" />
@@ -101,26 +100,26 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="726,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Select movie format and movie schedule" />
-    <Sequence DisplayName="Get movie formats" sap:VirtualizedContainerService.HintSize="726,440" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="726,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Select movie format and movie schedule" />
+    <Sequence DisplayName="Get movie formats" sap:VirtualizedContainerService.HintSize="726,436" sap2010:WorkflowViewState.IdRef="Sequence_9">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Omul P ia Page'" sap:VirtualizedContainerService.HintSize="434,347" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="9d6154f8ed5b2cfc1dc8d8e5f8a17ba6" Selector="&lt;html app='chrome.exe' title='Omul-Păianjen: Niciun drum spre casă | Rezervă/cumpără bilete la Cinema City' /&gt;">
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'Omul P ia Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="9d6154f8ed5b2cfc1dc8d8e5f8a17ba6" Selector="&lt;html app='chrome.exe' title='* | Rezervă/cumpără bilete la Cinema City' /&gt;">
         <ui:BrowserScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'DIV'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
+              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data 'DIV'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
                 <ui:ExtractData.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2517fb70-ae47-47c2-be9b-0ac161bd2b40" InformativeScreenshot="35027c78741230fbac6d2f2c4d8653e5" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;section&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div' tag='DIV' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
@@ -134,19 +133,19 @@
         </ui:BrowserScope.Body>
       </ui:BrowserScope>
     </Sequence>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="Get a string of formats" sap:VirtualizedContainerService.HintSize="726,288" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="Get a string of formats" sap:VirtualizedContainerService.HintSize="726,272" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="306,158" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="264,65" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[formatStr]</OutArgument>
               </Assign.To>
@@ -158,19 +157,19 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <p:SplitString DisplayName="Split string" sap:VirtualizedContainerService.HintSize="726,143" sap2010:WorkflowViewState.IdRef="SplitString_3" Input="[formatStr]" Result="[formatList]" Separator=" " StringSplitOptions="None" />
-    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Movie Format" sap:VirtualizedContainerService.HintSize="726,317" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label=" " Options="[formatList]" Title=" ">
+    <p:SplitString DisplayName="Split string" sap:VirtualizedContainerService.HintSize="726,132" sap2010:WorkflowViewState.IdRef="SplitString_3" Input="[formatStr]" Result="[formatList]" Separator=" " StringSplitOptions="None" />
+    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Movie Format" sap:VirtualizedContainerService.HintSize="726,291" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label=" " Options="[formatList]" Title=" ">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_movieFormat]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Select DIV by movie format" sap:VirtualizedContainerService.HintSize="726,200" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
+    <ui:AnchorBase AnchorPosition="Auto" DisplayName="Select DIV by movie format" sap:VirtualizedContainerService.HintSize="726,198" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
       <ui:AnchorBase.Action>
         <ActivityAction x:TypeArguments="ui:Anchor">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
           </ActivityAction.Argument>
-          <ui:FindChildren Children="[data]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+          <ui:FindChildren Children="[data]" DisplayName="Find Children 'DIV'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
             <ui:FindChildren.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1390796d-63aa-4e71-aea0-d3ae93ada225" InformativeScreenshot="016a78997fbd2b7a8b9fd48bad04ad06" Selector="&lt;webctrl tag='DIV' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -185,7 +184,7 @@
         </ActivityAction>
       </ui:AnchorBase.Action>
       <ui:AnchorBase.AnchorProvider>
-        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'SPAN'" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
+        <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
           <ui:WaitUiElementAppear.Target>
             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c35de3c3-e1c0-4a9c-89e4-c64670c4d919" InformativeScreenshot="baf496c64afe73f3a73f256814a05ea8" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='* | Rezervă/cumpără bilete la Cinema City' /&gt;&lt;webctrl aaname='{0}' tag='SPAN' /&gt;&quot;, out_movieFormat)]">
               <ui:Target.TimeoutMS>
@@ -199,13 +198,13 @@
         </ui:WaitUiElementAppear>
       </ui:AnchorBase.AnchorProvider>
     </ui:AnchorBase>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="Extract schedule for movies by format" sap:VirtualizedContainerService.HintSize="726,1399" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[data]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="Extract schedule for movies by format" sap:VirtualizedContainerService.HintSize="726,1314" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[data]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1265" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1190" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="first" />
               <Variable x:TypeArguments="x:Int32" Name="index" />
@@ -216,7 +215,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="outerText" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="334,175" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+            <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="outerText" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
               <ui:GetAttribute.Result>
                 <OutArgument x:TypeArguments="x:String">[text]</OutArgument>
               </ui:GetAttribute.Result>
@@ -231,7 +230,7 @@
                 </ui:Target>
               </ui:GetAttribute.Target>
             </ui:GetAttribute>
-            <Assign DisplayName="Get first index of &quot; &quot;" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Get first index of &quot; &quot;" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[first]</OutArgument>
               </Assign.To>
@@ -239,7 +238,7 @@
                 <InArgument x:TypeArguments="x:Int32">[text.indexOf(" ")]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Keep hours" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign DisplayName="Keep hours" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[text]</OutArgument>
               </Assign.To>
@@ -247,7 +246,7 @@
                 <InArgument x:TypeArguments="x:String">[text.Substring(first,text.Length-17)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
               </Assign.To>
@@ -255,9 +254,9 @@
                 <InArgument x:TypeArguments="x:Int32">[text.indexOf(":")]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,102" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;'Schedule: &quot; + text]" />
-            <p:SplitString DisplayName="Split string" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="SplitString_2" Input="[text]" Result="[resultList]" Separator="  " StringSplitOptions="None" />
-            <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input movie hour" sap:VirtualizedContainerService.HintSize="334,317" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="hello" Options="[resultList]" Title="Select">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;'Schedule: &quot; + text]" />
+            <p:SplitString DisplayName="Split string" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="SplitString_2" Input="[text]" Result="[resultList]" Separator="  " StringSplitOptions="None" />
+            <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input movie hour" sap:VirtualizedContainerService.HintSize="334,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="hello" Options="[resultList]" Title="Select">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:String">[out_movieTime]</OutArgument>
               </ui:InputDialog.Result>
