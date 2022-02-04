@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>933,2235</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1093,2149</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Select_places_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -82,13 +82,13 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SelectPlaces" sap:VirtualizedContainerService.HintSize="560,2170" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SelectPlaces" sap:VirtualizedContainerService.HintSize="560,2084" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="CLick NEXT" sap:VirtualizedContainerService.HintSize="518,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="CLick NEXT" sap:VirtualizedContainerService.HintSize="518,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -110,7 +110,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Scroll down" sap:VirtualizedContainerService.HintSize="518,163" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="down" KeyModifiers="None" SpecialKey="True">
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Scroll down" sap:VirtualizedContainerService.HintSize="518,152" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="down" KeyModifiers="None" SpecialKey="True">
       <ui:SendHotkey.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d356a615-f7f5-47d3-87bf-15a58f7c316f" InformativeScreenshot="dc002c29fdb8bb74e891154978199bba" Selector="[String.Format(&quot;&lt;html app='chrome.exe' htmlwindowname='{0}' title='Select Seats' /&gt;&lt;webctrl aaname='Resetare Zoom' tag='BUTTON' /&gt;&quot;, in_cinemaName)]">
           <ui:Target.TimeoutMS>
@@ -122,17 +122,17 @@
         </ui:Target>
       </ui:SendHotkey.Target>
     </ui:SendHotkey>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="518,132" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This sequence selects nrOfTickets places (for each ticket). At each step it checks whether nrOfTickets is 0.&#xA;If it is it stops selecting places, in other case, it decrements the variable by 1 and goes to the next step.&#xA;" />
-    <ui:Comment sap:VirtualizedContainerService.HintSize="518,113" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// CV was used because no other option is better.&#xA;Element selectors can't detect the places and Image selectors are not a viable solution" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,102" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selecting &quot; + in_nrOfTickets.ToString]" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DisplayName="Select places" sap:VirtualizedContainerService.HintSize="518,1260" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="518,131" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This sequence selects nrOfTickets places (for each ticket). At each step it checks whether nrOfTickets is 0.&#xA;If it is it stops selecting places, in other case, it decrements the variable by 1 and goes to the next step.&#xA;" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="518,112" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// CV was used because no other option is better.&#xA;Element selectors can't detect the places and Image selectors are not a viable solution" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="518,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Selecting &quot; + in_nrOfTickets.ToString]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DisplayName="Select places" sap:VirtualizedContainerService.HintSize="518,1200" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V3">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_3">
-            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 1" sap:VirtualizedContainerService.HintSize="484,542" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 1" sap:VirtualizedContainerService.HintSize="484,514" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -140,13 +140,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,340" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,328" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (76,265,43,42)&quot; +&#xA;&quot;Anchor: Text '12' (88,279,20,15)&quot; +&#xA;&quot;Anchor: Text '6' (25,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_11" InformativeScreenshot="e8bcd598578a85339c446964f1506c0c" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (76,265,43,42)&quot; +&#xA;&quot;Anchor: Text '12' (88,279,20,15)&quot; +&#xA;&quot;Anchor: Text '6' (25,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_11" InformativeScreenshot="e8bcd598578a85339c446964f1506c0c" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -181,7 +181,7 @@
                       </ui:Target>
                     </p:CvClickWithDescriptor.Target>
                   </p:CvClickWithDescriptor>
-                  <Assign DisplayName="Decrement" sap:VirtualizedContainerService.HintSize="334,65" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign DisplayName="Decrement" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[in_nrOfTickets]</OutArgument>
                     </Assign.To>
@@ -201,7 +201,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 2" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 2" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -215,7 +215,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '10' (182,279,19,15)&quot; +&#xD;&#xA;&quot;Anchor: Button (170,264,43,44)&quot; +&#xD;&#xA;&quot;Anchor: Text '6' (25,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_12" InformativeScreenshot="23d7db6f13d5857e5fcc4f3c6ad21ce9" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '10' (182,279,19,15)&quot; +&#xA;&quot;Anchor: Button (170,264,43,44)&quot; +&#xA;&quot;Anchor: Text '6' (25,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_12" InformativeScreenshot="23d7db6f13d5857e5fcc4f3c6ad21ce9" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -270,7 +270,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 3" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 3" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -284,7 +284,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '8' (279,279,14,15)&quot; +&#xD;&#xA;&quot;Anchor: Button (264,265,43,42)&quot; +&#xD;&#xA;&quot;Anchor: Text '6' (25,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_13" InformativeScreenshot="7153838a1e029444622d6392c04dedbe" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '8' (279,279,14,15)&quot; +&#xA;&quot;Anchor: Button (264,265,43,42)&quot; +&#xA;&quot;Anchor: Text '6' (25,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_13" InformativeScreenshot="7153838a1e029444622d6392c04dedbe" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -339,7 +339,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 4" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 4" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -353,7 +353,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '5' (543,279,13,15)&quot; +&#xD;&#xA;&quot;Anchor: Button (527,265,44,42)&quot; +&#xD;&#xA;&quot;Anchor: Text '6' (927,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_14" InformativeScreenshot="5e094fa0c541c150644075b55ac92b78" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '5' (543,279,13,15)&quot; +&#xA;&quot;Anchor: Button (527,265,44,42)&quot; +&#xA;&quot;Anchor: Text '6' (927,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_14" InformativeScreenshot="5e094fa0c541c150644075b55ac92b78" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -408,7 +408,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 5" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="If_5">
+            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 5" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -422,7 +422,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '4' (590,279,13,15)&quot; +&#xD;&#xA;&quot;Anchor: Button (574,265,43,42)&quot; +&#xD;&#xA;&quot;Anchor: Text '6' (927,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_15" InformativeScreenshot="a7640094e419cda274d33f53c5f93305" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '4' (590,279,13,15)&quot; +&#xA;&quot;Anchor: Button (574,265,43,42)&quot; +&#xA;&quot;Anchor: Text '6' (927,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_15" InformativeScreenshot="a7640094e419cda274d33f53c5f93305" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -477,7 +477,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 6" sap:VirtualizedContainerService.HintSize="484,57" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[in_nrOfTickets &lt;&gt; 0]" DisplayName="Check 6" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -491,7 +491,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '2' (684,278,13,16)&quot; +&#xD;&#xA;&quot;Anchor: Button (669,265,43,42)&quot; +&#xD;&#xA;&quot;Anchor: Text '6' (927,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_16" InformativeScreenshot="38b347e59940cccfd47b4a68f5be4d46" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
+                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '2' (684,278,13,16)&quot; +&#xA;&quot;Anchor: Button (669,265,43,42)&quot; +&#xA;&quot;Anchor: Text '6' (927,278,12,16)&quot;]" DesignTimeCacheId="98f7ed45-e9c4-4b53-a4b5-361bae0b9874" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="334,142" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_16" InformativeScreenshot="38b347e59940cccfd47b4a68f5be4d46" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V3">
                     <p:CvClickWithDescriptor.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -958,7 +958,7 @@
           <ActivityFunc.Argument>
             <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
           </ActivityFunc.Argument>
-          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,23" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>

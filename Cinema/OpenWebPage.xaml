@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1092,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1093,843</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenWebPage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -65,10 +65,11 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenWebPage" sap:VirtualizedContainerService.HintSize="593,573" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OpenWebPage" sap:VirtualizedContainerService.HintSize="593,1040" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="pageLoaded" />
     </Sequence.Variables>
@@ -77,15 +78,17 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="551,572" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="551,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// If the element indicated on screen doesn't exist will retry to open the web page" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="551,703" sap2010:WorkflowViewState.IdRef="RetryScope_1">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="509,307" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="509,438" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="467,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Attempting to open the cinema page.&quot;]" />
             <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,215" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_URL]">
               <ui:OpenBrowser.Body>
                 <ActivityAction x:TypeArguments="x:Object">
@@ -108,7 +111,7 @@
       </ui:RetryScope.ActivityBody>
       <ui:RetryScope.Condition>
         <ActivityFunc x:TypeArguments="x:Boolean">
-          <ui:UiElementExists DisplayName="Element Exists 'IMG'" Exists="[pageLoaded]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists DisplayName="Title Image Exists" Exists="[pageLoaded]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0c7f4262-53bc-4d1b-927f-bee2e12a30f1" InformativeScreenshot="a0a92c55e304129c4c8445803c1747c2" Selector="&lt;html app='chrome.exe' title='Cele mai recente filme- Filme Noi-Filme 3D | Cinema City' /&gt;&lt;webctrl tag='IMG' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -123,5 +126,6 @@
         </ActivityFunc>
       </ui:RetryScope.Condition>
     </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="551,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Web page has been loaded&quot;]" />
   </Sequence>
 </Activity>

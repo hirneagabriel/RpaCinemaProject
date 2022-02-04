@@ -6,10 +6,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>852,2084</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1093,2326</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InputContactData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="64">
+    <scg:List x:TypeArguments="x:String" Capacity="36">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -49,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -84,10 +84,11 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ContactDataForm" sap:VirtualizedContainerService.HintSize="376,2019" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ContactDataForm" sap:VirtualizedContainerService.HintSize="376,2261" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="contactInfo" />
       <Variable x:TypeArguments="x:String" Name="password" />
+      <Variable x:TypeArguments="x:String" Name="urlToSend" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -224,12 +225,22 @@
       </ui:Click.Target>
     </ui:Click>
     <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH1gHVQIk5UOMxj0FRdYu6wAAAAACAAAAAAAQZgAAAAEAACAAAACjFz6FLZRj/D6jcYjBeQlXUxSlHAFjsB0Dulc0l23QxQAAAAAOgAAAAAIAACAAAAA1Aox2H5mdgQ+sTcBrErsRYg/YEyOUInSLgDwfcvMz4RAAAAC7YiX3ODr5leiU6Bwf3FGzQAAAAERVcWa46ZLmnS6QhDtfPX0FlpnnqitVfjmssgwaiToQUF9xXJPMI0NurhF1PjWbO28ojE0/1EGYhSMTRMAqHGo=" Result="[password]" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send SMTP Mail Message" Email="rpacinema@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Cinema link" To="[contactInfo(0)(3).toString]">
-      <ui:SendMail.Body>
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
-      </ui:SendMail.Body>
+    <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="url" DisplayName="Get Attribute Numar Card" sap:VirtualizedContainerService.HintSize="334,202" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+      <ui:GetAttribute.Result>
+        <OutArgument x:TypeArguments="x:String">[urlToSend]</OutArgument>
+      </ui:GetAttribute.Result>
+      <ui:GetAttribute.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="48f7a002-bb82-438b-8fdd-bef99923bfc2" InformativeScreenshot="a027b26b2c84e72c12bc65883db51f53" Selector="&lt;html app='chrome.exe' htmlwindowname='*' title='Select Seats' /&gt;&lt;webctrl id='payuFrame' tag='IFRAME' /&gt;&lt;webctrl tag='LABEL' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:GetAttribute.Target>
+    </ui:GetAttribute>
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[urlToSend]" DisplayName="Send SMTP Mail Message" Email="rpacinema@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="[password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Cinema link" To="[contactInfo(0)(3).toString]">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
       </ui:SendMail.Files>

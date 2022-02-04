@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VUb+MNaCLwCJaOGrucfMDHJ2RJkGsXq0ijI9dqM2cpnxZHNtuIOVvkIWWDbiuuqgwv2bK0873tD79g31dJecIA==",
+  "dgSpecHash": "0N6EkZX8PgPJ7D92RNJhLY0b/aDJTIahoKXJ33420mespfK2CJaN+DiHEpIxrigFqlEr0MTqrkJaF/mx8uclUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stefan\\Documents\\GitHub\\RpaCinemaProject\\Cinema\\.local\\",
+  "projectFilePath": "C:\\Users\\Stefan\\Downloads\\RpaCinemaProject\\RpaCinemaProject\\Cinema\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Stefan\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\Stefan\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",

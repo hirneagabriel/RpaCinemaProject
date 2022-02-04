@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,1671</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1093,2760</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>WriteMoviesIntoExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -48,7 +48,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -78,22 +78,24 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="WriteMoviesIntoExcel" sap:VirtualizedContainerService.HintSize="612,3174" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="WriteMoviesIntoExcel" sap:VirtualizedContainerService.HintSize="476,2790" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="MovieString" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="MovieList" />
       <Variable x:TypeArguments="sd:DataTable" Name="newMovieDT" />
+      <Variable x:TypeArguments="x:Boolean" Name="pageLoded" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="570,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Create a new DT" />
+    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[newMovieDT]</OutArgument>
       </Assign.To>
@@ -101,34 +103,38 @@
         <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ClearDataTable DataTable="[newMovieDT]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="570,79" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Movies" DataTable="[newMovieDT]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="570,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Rating" DataTable="[newMovieDT]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="570,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="570,1155" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.google.com/search?q=film">
+    <ui:ClearDataTable DataTable="[newMovieDT]" DisplayName="Clear New Data Table" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Add two collumns" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Movies" DataTable="[newMovieDT]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Rating" DataTable="[newMovieDT]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening new web page...&quot;]" />
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" Hidden="True" sap:VirtualizedContainerService.HintSize="570,1417" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://www.google.com/search?q=film">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="536,1054" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap:VirtualizedContainerService.HintSize="536,1316" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="494,900" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence sap:VirtualizedContainerService.HintSize="494,1031" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="452,808" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="452,939" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_MovieDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="410,716" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Search movies ratings&quot;]" />
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_MovieDataTable]" DisplayName="For Each Movie in Data Table" sap:VirtualizedContainerService.HintSize="410,716" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
@@ -143,7 +149,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[row.Item(0).ToString+ &quot; IMDB rating[k(enter)]&quot;]">
+                        <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Search Bar Movie Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[row.Item(0).ToString+ &quot; IMDB rating[k(enter)]&quot;]">
                           <ui:TypeInto.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="63d6505c-ca12-476a-9fb3-6f2a1a692905" InformativeScreenshot="0985385d8b807e52bfedbaff8cee0bb7" Selector="&lt;html app='chrome.exe' title='*Google Search' /&gt;&lt;webctrl tag='INPUT' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -155,7 +161,7 @@
                             </ui:Target>
                           </ui:TypeInto.Target>
                         </ui:TypeInto>
-                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Rating of Movie" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="09e93154-ba2e-4797-9b69-2d8107dbacb9" InformativeScreenshot="e18ccab7afbad38c89a866b7f6f163d5" Selector="&lt;html app='chrome.exe' title='* IMDB rating - Google Search' /&gt;&lt;webctrl aaname='Rating: */10' parentid='rso' tag='SPAN' /&gt;">
                               <ui:Target.TimeoutMS>
@@ -170,36 +176,47 @@
                             <OutArgument x:TypeArguments="x:String">[movieRating]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(0).ToString, movieRating}]" DataTable="[newMovieDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row.Item(0).ToString, movieRating}]" DataTable="[newMovieDT]" DisplayName="Add Data In DT" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEachRow.Body>
                 </ui:ForEachRow>
               </Sequence>
             </Sequence>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="494,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;All ratings has been collected&quot;]" />
             <ui:CloseTab Browser="{x:Null}" DisplayName="Close Tab" sap:VirtualizedContainerService.HintSize="494,22" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
           </Sequence>
         </ActivityAction>
       </ui:OpenBrowser.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:OpenBrowser>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="570,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_ExcelFile]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Writing into excel file&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,650" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_ExcelFile]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,541" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Delete old data from sheet" />
+            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A1:B25" SheetName="Sheet1" ShiftCells="False" ShiftOption="ShiftUp" />
+            <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Write new data" />
             <ui:ExcelWriteRange AddHeaders="False" DataTable="[newMovieDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <Assign sap:VirtualizedContainerService.HintSize="570,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[MovieList]</OutArgument>
       </Assign.To>
@@ -207,7 +224,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[new List(of string)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_MovieDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="570,234" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_MovieDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,234" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -224,11 +241,11 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="570,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Alege filmul pe care il vrei. Pentru mai multe detalii despre film intra pe fisierul excel aferent." Options="[MovieList.ToArray]" Title="Alege un film">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Select movie...&quot;]" />
+    <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,291" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Alege filmul pe care il vrei. Pentru mai multe detalii despre film intra pe fisierul excel aferent." Options="[MovieList.ToArray]" Title="Alege un film">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_SelectedMovie]</OutArgument>
       </ui:InputDialog.Result>
     </ui:InputDialog>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Movie" DataTable="[newMovieDT]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="570,185" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
   </Sequence>
 </Activity>
